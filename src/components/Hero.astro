@@ -1,0 +1,294 @@
+---
+import { Image } from 'astro:assets';
+import Test from '../assets/pexels-simon73-1693302.jpg';
+import Service from '../assets/PouroverPicture.png';
+---
+
+
+
+<section id="hero-2410" style={`
+    background-image: url(${Test.src}); 
+    background-size: 500px; 
+    background-color: #11576f; 
+    background-blend-mode: multiply;
+  `}>
+  <div class="cs-container">
+      <div class="cs-content">
+          <h1 class="cs-title">Community Driven Specialty Coffee.</h1>
+          <p class="cs-text">
+
+          </p>
+          <a href="https://order.dripos.com/Bloom" class="cs-button-solid">Order Online</a>
+      </div>
+      <!--Hero Image-->
+      <div class="cs-image-group">
+          <!-- IF you have a wide image that gets cut off on the right, go the the cs-picture img and set the left value to a negative number till its where you like it in frame-->
+          <picture class="cs-picture circle-crop">
+              <!--Mobile Image-->
+              <source media="(max-width: 1000px)" src={Service}>
+              <!--Tablet and above Image-->
+              <source media="(min-width: 1001px)" src={Service}>
+              <Image decoding="async" fetchpriority="high" src={Service} alt="Pour over" width="635" height="836" />
+          </picture>
+
+
+      </div>
+  </div>
+  <!--White curve-->
+  <svg class="cs-wave" width="1920" height="167" viewBox="0 0 1920 167" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1920 167H0V0C111.116 45.3334 456.485 136 951 136C1445.52 136 1803.21 45.3334 1920 0V167Z" fill="white"/>
+      </svg>
+</section>
+<style>
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-2410 {
+      /* This allows the image to tile horizontally and vertically */
+      background-repeat: repeat;
+      background-position: top left;
+      
+      /* Standard layout styles */
+      padding: clamp(11.25rem, 16.82vw, 12.5rem) 1rem clamp(3.75rem, 8vw, 7.5rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    #hero-2410:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #136A88; /* Deep Midnight Blue */
+      opacity: 0.01; /* Increased opacity to darken the bricks further */
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    #hero-2410 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    #hero-2410 .cs-content {
+      max-width: 34.375rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #hero-2410 .cs-topper {
+      font-size: 1rem;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    #hero-2410 .cs-title {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      /* 39px - 72px */
+      font-size: clamp(2.4375rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: center;
+      /* 23 characters including spaces wide */
+      max-width: 23ch;
+      margin: 0 0 1rem 0;
+      color: white;
+      position: relative;
+    }
+    #hero-2410 .cs-text {
+      /* 16px - 20px */
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      line-height: 1.5em;
+      text-align: center;
+      width: 100%;
+      max-width: 33.1875rem;
+      /* 28px - 40px */
+      margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
+      color: var(--bodyTextColor);
+    }
+  #hero-2410 .cs-button-solid {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    --gradientmix: color-mix(in lab, var(--primary), black 49%);
+    font-size: 1.75rem; /* 1.75 × 1rem */
+    line-height: clamp(5.03125rem, 9.625vw, 6.125rem); /* Scaled 1.75× original values */
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+    margin: 0;
+    min-width: 16.40625rem; /* 1.75 × 9.375rem */
+    padding: 0 3.0625rem; /* 1.75 × 1.75rem */
+    background: #406EA5;
+    box-shadow: 
+      0 14px 28px 0 rgba(0,0,0,0.2), 
+      0 10.5px 35px 0 rgba(0,0,0,0.19); /* 1.75× original shadow sizes */
+    border-radius: 10.9375rem; /* 1.75 × 6.25rem */
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+    #hero-2410 .cs-button-solid:before {
+      content: '';
+      width: 0%;
+      height: 100%;
+      border-radius: 0.25rem;
+      background: var(--secondary);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.3s;
+      opacity: 1;
+    }
+    #hero-2410 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #hero-2410 .cs-image-group {
+      /* we use ems for everything inside the cs-image-group so they pull their value for em from the cs-image-group container that we set.  This min-max property lets us tie the font size to the view width of the screen and grows proportionally with every pixel wide the screen gets until the value the view width units = .75em, resets at small desktop */
+      font-size: min(1.7vw, .55rem);
+      width: 52.1875em;
+      height: 52.25em;
+      /* prevents flexbox from squishing it */
+      flex: none;
+      position: relative;
+      z-index: 2;
+    }
+#hero-2410 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Or whatever size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+#hero-2410 .cs-picture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45em; /* ~635px */
+  height: 52.25em;  /* ~836px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-2410 .cs-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+    #hero-2410 .cs-circle {
+      width: 47.375em;
+      height: auto;
+      position: absolute;
+      right: 0;
+      bottom: 1.125em;
+      z-index: -1;
+    }
+    #hero-2410 .cs-circle circle {
+      fill: var(--primary);
+      opacity: 1; 
+    }
+    #hero-2410 .cs-arrow {
+      /* 60px - 130px */
+      width: 4.75em;
+      height: auto;
+      position: absolute;
+      bottom: 11.375em;
+      left: 6.4375em;
+      transform: rotate(28deg);
+    }
+    #hero-2410 .cs-no-no {
+      width: 10.3125em;
+      height: auto;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    #hero-2410 .cs-wave {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+    }
+  }
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #hero-2410 {
+    padding:15vh 0 0 0;
+    text-align: left;
+    /* 1. Force the main section to align everything to the start (left), not center */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+  }
+
+  #hero-2410 .cs-container {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #hero-2410 .cs-content {
+    width: 100%;
+    padding: 0 clamp(3rem, 6vw, 8rem);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  /* --- RIGHT SIDE IMAGE (Kept as is since it works) --- */
+  #hero-2410 .cs-image-group {
+    z-index: 1;
+    height:75%;
+        align-items:center;
+    justify-content:center;
+  }
+
+  #hero-2410 .cs-picture {
+
+  }
+
+  #hero-2410 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Hide decorations */
+  #hero-2410 .cs-circle,
+  #hero-2410 .cs-arrow,
+  #hero-2410 .cs-no-no {
+    display: none;
+  }
+}
+</style>

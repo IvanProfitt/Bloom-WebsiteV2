@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import ContactHero from '../components/ContactHero.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import SideBySide from '../components/SideBySide.astro';
+import CTA from '../components/CTA.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import CateringHero from '../components/CateringHero.astro';
+import NavSpacer from '../components/NavSpacer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<NavSpacer />
+
+		<ContactHero />
+		<Footer />
+	</body>
+	<script src="../assets/script.js"></script>
+</html>

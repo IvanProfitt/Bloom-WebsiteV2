@@ -1,0 +1,201 @@
+---
+import { Image } from 'astro:assets';
+import PouroverPicture from '../assets/PouroverSetup.png';
+---
+
+<section id="sbsr-2172">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" src={PouroverPicture}>
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" src={PouroverPicture}>
+            <Image loading="lazy" decoding="async" src={PouroverPicture} alt="Pourover Setup" width="960" height="796">
+        </picture>
+        <div class="cs-content">
+            <span class="cs-topper">Contact Us</span>
+            <h2 class="cs-title">Have a Question? Let’s Chat.</h2>
+            <p class="cs-text">
+                Whether you're looking for catering, an event space, or wondering about our pour over selection, we're happy to hear from you.
+            </p>
+
+            <form action="https://formspree.io/f/xjgagdga" method="POST" class="cs-form">
+                <label class="cs-label">
+                    Email
+                    <input class="cs-input" type="email" name="email" placeholder="name@email.com" required>
+                </label>
+                <label class="cs-label">
+                    Message
+                    <textarea class="cs-input cs-textarea" name="message" placeholder="How can we help?" required></textarea>
+                </label>
+                <button class="cs-button-solid" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+<style>
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbsr-2172 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Prevents overflow if padding or margin pushes elements */
+  }
+  #sbsr-2172 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Added gap to ensure spacing between image and text */
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #sbsr-2172 .cs-content {
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    padding: var(--sectionPadding);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Removed padding so gap controls spacing */
+    padding-bottom: 0; 
+  }
+  #sbsr-2172 .cs-text {
+    margin-bottom: 1rem;
+    color: var(--bodyTextColor);
+  }
+  #sbsr-2172 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  /* --- Form Styling --- */
+  #sbsr-2172 .cs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  #sbsr-2172 .cs-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--headerColor);
+  }
+  #sbsr-2172 .cs-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Crucial for alignment */
+  }
+  #sbsr-2172 .cs-input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  #sbsr-2172 .cs-textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  #sbsr-2172 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0 0;
+    color: #fff;
+    min-width: 12.5rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+  }
+  #sbsr-2172 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #sbsr-2172 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  /* --- MODIFIED: Centered and 75% Image --- */
+  #sbsr-2172 .cs-picture {
+    display: flex;
+    justify-content: center; /* Horizontally center contents */
+    width: 100%;
+    max-width: 60rem; /* Clamp maximum width to keep it looking good on large desktops */
+    margin: 0 auto var(--sectionPadding); /* Center and add standard section separation */
+    /* Adjusting order to keep photo above the form on mobile */
+    order: -1; 
+  }
+  #sbsr-2172 .cs-picture img {
+    /* Main adjustment: Image fills 75% of the parent width */
+    width: 75%;
+    height: 75%; /* Set height to 75% of its contain area */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbsr-2172 {
+    /* 90px - 150px padding */
+    padding: clamp(5.625rem, 9vw, 9.375rem) 1rem;
+  }
+  #sbsr-2172 .cs-container {
+    flex-direction: row;
+    justify-content: space-between; /* Space out content and image */
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+  }
+  #sbsr-2172 .cs-content {
+    width: 50%;
+    max-width: 35.1875rem;
+    padding: 0;
+    margin: auto 0; /* Vertically center content */
+  }
+  
+  /* --- MODIFIED Tablet/Desktop Image Position --- */
+  #sbsr-2172 .cs-picture {
+    display: block; /* Back to block for standard flow */
+    position: relative;
+    width: 48%; /* Use standard width for flow next to text */
+    height: auto;
+    margin: 0;
+    order: 1; /* Reset ordering for desktop (image right, text left) */
+  }
+  
+  #sbsr-2172 .cs-picture img {
+    width: 100%; /* Image fills its specific container width, not screen width */
+    height: 100%;
+    position: relative; /* Normal positioning */
+    left: auto; /* Reset absolute values */
+    top: auto;
+  }
+}
+</style>
