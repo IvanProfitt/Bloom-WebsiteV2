@@ -2,24 +2,27 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import BaseHead from '../../components/BaseHead.astro';
----
+// Ensure these are imported if they are in a config file
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'; 
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+    const posts = await getCollection('blog');
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post,
+    }));
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
+
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
 <BlogPost {...post.data}>
-	<Content />
+    <Content />
 </BlogPost>
+
 <script src="../../assets/script.js"></script>
-
-
