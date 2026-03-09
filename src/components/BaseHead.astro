@@ -16,7 +16,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
 ---
-
+<head>
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -44,7 +44,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="description" content={description} />
 
 
-<script type="text/javascript">
+<script is:inline type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -52,8 +52,8 @@ const { title, description, image = FallbackImage } = Astro.props;
     })(window, document, "clarity", "script", "ua8497iwdu");
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKRQHQVB7G"></script>
-<script>
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JKRQHQVB7G"></script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -74,3 +74,4 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+</head>
