@@ -9,5 +9,9 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://brewedbybloom.com',
-    integrations: [mdx(), sitemap(), partytown()],
+    integrations: [mdx(), sitemap(), partytown({
+        config: {
+            forward: ['dataLayer.push', 'gtag'],
+        }
+    })],
 });
