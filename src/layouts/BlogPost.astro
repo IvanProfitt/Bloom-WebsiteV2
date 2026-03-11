@@ -21,9 +21,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin: 0;
 			}
 			.hero-image {
-				width: 100%;
+
 			}
 			.hero-image img {
+				object-fit: cover;
+				width: 30rem;
+				height: 30rem;
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;

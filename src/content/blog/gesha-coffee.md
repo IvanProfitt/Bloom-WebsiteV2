@@ -1,6 +1,6 @@
 ---
 title: 'Why is Gesha so special?'
-description: 'How much for a cup of coffee!'
+description: 'How much for a cup of coffee?!'
 pubDate: 'Jan 22 2026'
 heroImage: '../../assets/Sebastian Ramirez.jpg'
 ---
