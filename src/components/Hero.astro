@@ -7,9 +7,9 @@ import Service from '../assets/PouroverPicture.png';
 
 
 <section id="hero-2410" style={`
-    background-image: url(${Test.src}); 
+    background: #11576f url(${Test.src}); 
     background-size: 500px; 
-    background-color: #11576f; 
+    background-repeat: repeat;
     background-blend-mode: multiply;
   `}>
   <div class="cs-container">
@@ -43,11 +43,10 @@ import Service from '../assets/PouroverPicture.png';
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #hero-2410 {
-      /* This allows the image to tile horizontally and vertically */
       background-repeat: repeat;
       background-position: top left;
       
-      /* Standard layout styles */
+      isolation: isolate;
       padding: clamp(11.25rem, 16.82vw, 12.5rem) 1rem clamp(3.75rem, 8vw, 7.5rem);
       position: relative;
       z-index: 1;
@@ -57,8 +56,8 @@ import Service from '../assets/PouroverPicture.png';
       content: '';
       width: 100%;
       height: 100%;
-      background: #136A88; /* Deep Midnight Blue */
-      opacity: 0.01; /* Increased opacity to darken the bricks further */
+      background: #136A88;
+      opacity: .4;
       display: block;
       position: absolute;
       top: 0;

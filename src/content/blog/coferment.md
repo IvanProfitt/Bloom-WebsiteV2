@@ -29,7 +29,7 @@ When you’re drinking a coferment, you’re getting extremely strong and obviou
 
 There’s absolutely a difference between this and an interesting single origin coffee, but I don’t think we should dismiss experimentation for the sake of purity. 
 
-### Ngio more gatekeeping!
+### No more gatekeeping!
 
 There are a lot of coffee snobs who dismiss the idea of coferments completely - it’s heresy to add anything to change the flavor of the coffee. I just don’t agree with that mindset. I don’t see any reason to outright dismiss experimentation just for the sake of purity. 
 
