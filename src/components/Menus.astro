@@ -1,0 +1,146 @@
+---
+import bloomMenu from "../assets/menus/Bloom Menu.pdf";
+import pourOverMenu from "../assets/menus/Bloom Pour Over.pdf";
+import teaMenu from "../assets/menus/Bloom Tea.pdf";
+---
+<section class="menu-downloads">
+  <div class="cs-container">
+    <h2 class="cs-title">Our Menus</h2>
+    <ul class="cs-card-group">
+      <li class="menu-downloads__item">
+        <a class="cs-button-solid" href={bloomMenu} target="_blank" rel="noopener noreferrer">
+          Bloom Menu
+        </a>
+      </li>
+      <li class="menu-downloads__item">
+        <a class="cs-button-solid" href={pourOverMenu} target="_blank" rel="noopener noreferrer">
+          Rotating Pour Overs<br>
+        </a>
+      </li>
+      <li class="menu-downloads__item">
+        <a class="cs-button-solid" href={teaMenu} target="_blank" rel="noopener noreferrer">
+          Bloom Tea
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .menu-downloads {
+    width: 100%;
+    padding: clamp(3.75rem, 7vw, 6.25rem) 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-downloads .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .menu-downloads .cs-title {
+    font-size: clamp(1.9375rem, 4.5vw, 3.0625rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0;
+    color: var(--primary, #173693);
+  }
+
+  .menu-downloads .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .menu-downloads__item {
+    grid-column: span 12;
+    background: #f0f4ff; /* Light blue card background */
+    border: 2px solid #e0e9ff; /* Subtle blue border */
+    /* Increased corner radius for a extra-rounded, soft look */
+    border-radius: clamp(1.5rem, 3.5vw, 2.5rem);
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft blue tinted box shadow */
+    box-shadow: 0px 10px 30px rgba(23, 54, 147, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .menu-downloads__item:hover {
+    transform: translateY(-0.3125rem);
+    border-color: var(--primary, #173693);
+    box-shadow: 0px 15px 35px rgba(23, 54, 147, 0.18);
+  }
+
+  /* Extra-rounded buttons with blue styling */
+  .menu-downloads .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    width: 100%;
+    max-width: 15rem;
+    padding: 0 2rem;
+    background-color: var(--primary, #173693);
+    /* Fully rounded pill button style matching card aesthetics */
+    border-radius: 6.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  .menu-downloads .cs-button-solid:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #0d215d; /* Darker navy hover fill */
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s ease;
+  }
+
+  .menu-downloads .cs-button-solid:hover {
+    color: #fff;
+  }
+
+  .menu-downloads .cs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  /* Tablet - 600px */
+  @media only screen and (min-width: 37.5rem) {
+    .menu-downloads__item {
+      grid-column: span 4;
+    }
+  }
+
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    .menu-downloads .cs-container {
+      max-width: 90rem;
+    }
+  }
+</style>

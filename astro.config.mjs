@@ -3,15 +3,23 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
-
 import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://brewedbybloom.com',
-    integrations: [mdx(), sitemap(), partytown({
-        config: {
-            forward: ['dataLayer.push', 'gtag'],
-        }
-    })],
+  site: 'https://brewedbybloom.com',
+  integrations: [
+    mdx(),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
+    }),
+  ],
+  markdown: {
+    shikiConfig: {
+      langs: ['astro'],
+    },
+  },
 });
