@@ -42,15 +42,26 @@ import Service from '../assets/PouroverPicture.png';
 <style>
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #hero-2410 {
-      background-repeat: repeat;
-      background-position: top left;
-      
-      isolation: isolate;
-      padding: clamp(11.25rem, 16.82vw, 12.5rem) 1rem clamp(3.75rem, 8vw, 7.5rem);
-      position: relative;
-      z-index: 1;
-    }
+#hero-2410 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 10.5rem;
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+
+    background-repeat: repeat;
+    background-position: top left;
+    isolation: isolate;
+    z-index: 1;
+  }
 
     #hero-2410:before {
       content: '';
@@ -94,46 +105,42 @@ import Service from '../assets/PouroverPicture.png';
     }
     #hero-2410 .cs-title {
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      /* 39px - 72px */
       font-size: clamp(2.4375rem, 5vw, 4.5rem);
       font-weight: 900;
       line-height: 1.2em;
       text-align: center;
-      /* 23 characters including spaces wide */
       max-width: 23ch;
       margin: 0 0 1rem 0;
       color: white;
       position: relative;
     }
     #hero-2410 .cs-text {
-      /* 16px - 20px */
       font-size: clamp(1rem, 1.5vw, 1.25rem);
       line-height: 1.5em;
       text-align: center;
       width: 100%;
       max-width: 33.1875rem;
-      /* 28px - 40px */
       margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
       color: var(--bodyTextColor);
     }
   #hero-2410 .cs-button-solid {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     --gradientmix: color-mix(in lab, var(--primary), black 49%);
-    font-size: 1.75rem; /* 1.75 × 1rem */
-    line-height: clamp(5.03125rem, 9.625vw, 6.125rem); /* Scaled 1.75× original values */
+    font-size: 1.75rem;
+    line-height: clamp(5.03125rem, 9.625vw, 6.125rem); 
     text-decoration: none;
     font-weight: 700;
     text-align: center;
     color: #fff;
     white-space: nowrap;
     margin: 0;
-    min-width: 16.40625rem; /* 1.75 × 9.375rem */
-    padding: 0 3.0625rem; /* 1.75 × 1.75rem */
+    min-width: 16.40625rem; 
+    padding: 0 3.0625rem; 
     background: #406EA5;
     box-shadow: 
       0 14px 28px 0 rgba(0,0,0,0.2), 
-      0 10.5px 35px 0 rgba(0,0,0,0.19); /* 1.75× original shadow sizes */
-    border-radius: 10.9375rem; /* 1.75 × 6.25rem */
+      0 10.5px 35px 0 rgba(0,0,0,0.19); 
+    border-radius: 10.9375rem; 
     overflow: hidden;
     display: inline-block;
     position: relative;
@@ -156,24 +163,13 @@ import Service from '../assets/PouroverPicture.png';
       width: 100%;
     }
     #hero-2410 .cs-image-group {
-      /* we use ems for everything inside the cs-image-group so they pull their value for em from the cs-image-group container that we set.  This min-max property lets us tie the font size to the view width of the screen and grows proportionally with every pixel wide the screen gets until the value the view width units = .75em, resets at small desktop */
       font-size: min(1.7vw, .55rem);
       width: 52.1875em;
       height: 52.25em;
-      /* prevents flexbox from squishing it */
       flex: none;
       position: relative;
       z-index: 2;
     }
-#hero-2410 {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Or whatever size */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 
 
@@ -183,8 +179,8 @@ import Service from '../assets/PouroverPicture.png';
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 45em; /* ~635px */
-  height: 52.25em;  /* ~836px */
+  width: 45em; 
+  height: 52.25em;  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,7 +204,6 @@ import Service from '../assets/PouroverPicture.png';
       opacity: 1; 
     }
     #hero-2410 .cs-arrow {
-      /* 60px - 130px */
       width: 4.75em;
       height: auto;
       position: absolute;
@@ -235,55 +230,89 @@ import Service from '../assets/PouroverPicture.png';
   }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #hero-2410 {
-    padding:15vh 0 0 0;
+#hero-2410 {
+    height: 100vh;
+    min-height: 40rem;
+    max-height: 100vh;
+    box-sizing: border-box;
+    
+    padding: 9rem 2rem 2rem 2rem;
     text-align: left;
-    /* 1. Force the main section to align everything to the start (left), not center */
+    
     display: flex;
-    justify-content: flex-start; 
+    justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   #hero-2410 .cs-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 80rem;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
   }
 
   #hero-2410 .cs-content {
-    width: 100%;
-    padding: 0 clamp(3rem, 6vw, 8rem);
-    box-sizing: border-box;
+    width: 50%;
+    max-width: 36rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     z-index: 10;
   }
 
-  /* --- RIGHT SIDE IMAGE (Kept as is since it works) --- */
+  #hero-2410 .cs-title {
+    text-align: left;
+    font-size: clamp(2.25rem, 3.5vw, 3.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  #hero-2410 .cs-text {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  #hero-2410 .cs-button-solid {
+    font-size: 1.25rem;
+    line-height: 3.5rem;
+    min-width: 12rem;
+    padding: 0 2.25rem;
+    border-radius: 3rem;
+  }
+
   #hero-2410 .cs-image-group {
+    width: 45%;
+    height: 100%;
+    max-height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
-    height:75%;
-        align-items:center;
-    justify-content:center;
+    font-size: 1rem;
   }
 
   #hero-2410 .cs-picture {
-
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    max-height: 32rem;
   }
 
   #hero-2410 .cs-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
   }
-  
-  /* Hide decorations */
+
   #hero-2410 .cs-circle,
   #hero-2410 .cs-arrow,
   #hero-2410 .cs-no-no {
